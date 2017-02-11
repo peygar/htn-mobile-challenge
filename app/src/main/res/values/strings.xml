@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HTN 2017 Mobile Challenge</string>
+    <string name="main_activity_title">Hack The North</string>
 </resources>

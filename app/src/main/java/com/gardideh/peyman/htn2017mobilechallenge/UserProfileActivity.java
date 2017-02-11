@@ -67,6 +67,9 @@ public class UserProfileActivity extends Activity implements AbsListView.OnScrol
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
         Rect rect = new Rect();
         heroImage.getLocalVisibleRect(rect);
+        if (rect.bottom < 10) {
+            return;
+        }
         if (lastTopValue != rect.top) {
             heroImage.setAlpha((float) Math.min(Math.abs(1 - rect.top / 600.0), 1.0));
             blurredImage.setAlpha((float) Math.min(rect.top / 600.0, 0.7));
