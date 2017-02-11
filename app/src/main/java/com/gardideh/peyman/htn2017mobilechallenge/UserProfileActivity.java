@@ -68,11 +68,8 @@ public class UserProfileActivity extends Activity implements AbsListView.OnScrol
         Rect rect = new Rect();
         heroImage.getLocalVisibleRect(rect);
         if (lastTopValue != rect.top) {
-
             heroImage.setAlpha((float) Math.min(Math.abs(1 - rect.top / 600.0), 1.0));
             blurredImage.setAlpha((float) Math.min(rect.top / 600.0, 0.7));
-            Log.d("rect", "" + rect.top + ", " + (float) Math.min(Math.abs(1 - rect.top / 600.0), 1.0)
-            + ", " + (float) Math.max(rect.top / 600.0, 0.7));
             lastTopValue = rect.top;
             heroImage.setY((float) (rect.top / 1.5));
         }

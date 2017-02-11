@@ -1,6 +1,7 @@
 package com.gardideh.peyman.htn2017mobilechallenge;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,7 +120,8 @@ class UserProfileInfoAdaptor extends BaseAdapter {
                     case COMPANY:
                         fieldType.setText("Company");
                         fieldValue.setText(userProfile.company);
-                        icon.setImageResource(android.R.drawable.star_on);
+                        icon.setImageResource(R.mipmap.ic_website_globe);
+                        icon.setColorFilter(Color.argb(0, 255, 255, 255));
                         break;
                 }
                 break;
