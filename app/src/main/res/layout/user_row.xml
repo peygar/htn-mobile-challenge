@@ -7,13 +7,20 @@
         android:orientation="horizontal"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/userImage"
-            android:layout_margin="10dp"/>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            app:civ_border_width="0dp"
+            app:civ_border_color="#FF000000"/>
+        <!--<ImageView-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:adjustViewBounds="true"-->
+            <!--android:id="@+id/userImage"-->
+            <!--android:layout_margin="10dp" />-->
 
 
         <!--<android.support.v4.widget.CircleImageView-->
@@ -23,18 +30,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
             <TextView android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/name"
                 android:typeface="sans"
                 android:textColor="#000000"
-                android:textSize="12pt"/>
-            <TextView
+                android:textSize="17sp"/>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#666666"
-                android:id="@+id/skills"
-                android:layout_marginBottom="5dp"/>
+                android:orientation="horizontal"
+                android:id="@+id/skills">
+w
+            </LinearLayout>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#666666"-->
+                <!--android:id="@+id/skills"-->
+                <!--android:textSize="15sp"-->
+                <!--android:layout_marginBottom="5dp"/>-->
         </LinearLayout>
     </LinearLayout>

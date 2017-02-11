@@ -136,8 +136,6 @@ class UserProfileInfoAdaptor extends BaseAdapter {
                         fieldType.setText("Company");
                         fieldValue.setText(userProfile.company);
                         icon.setImageResource(android.R.drawable.sym_contact_card);
-//                        icon.setImageResource(R.mipmap.ic_website_globe);
-//                        icon.setColorFilter(Color.argb(0, 255, 255, 255));
                         break;
                 }
                 break;
@@ -157,7 +155,6 @@ class UserProfileInfoAdaptor extends BaseAdapter {
                 LinearLayout skillsLayout = (LinearLayout) vi.findViewById(R.id.skills);
                 if (skillsLayout.getChildCount() > 1) break;
                 for (UserSkill skill: userProfile.skills) {
-                    Log.d("skills", skill.name);
                     View skillView = inflater.inflate(R.layout.user_profile_skill_text, skillsLayout, false);
                     TextView skillText = (TextView) skillView.findViewById(R.id.skill_text);
                     TextView ratingText = (TextView) skillView.findViewById(R.id.rating_text);
