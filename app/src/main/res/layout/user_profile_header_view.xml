@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:id="@+id/user_image"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:id="@+id/blurred_user_image"
+        android:alpha="0" />
+    <LinearLayout
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/hero_gradient"
+        android:layout_gravity="bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:layout_gravity="bottom|left"
+            android:id="@+id/name"
+            android:textColor="#ffffff"
+            android:textSize="30dp"/>
+    </LinearLayout>
+
+
+    <!--android:background="@drawable/trending_gradient_shape"/>-->
+</FrameLayout>
