@@ -54,11 +54,13 @@ class UserListAdaptor extends BaseAdapter implements StickyListHeadersAdapter {
 
         text1.setText(users[position].name);
         String topSkills = "";
-        if (users[position].skills.length > 0) {
-            topSkills = users[position].skills[0].name + " " + users[position].skills[0].rating;
+        if (users[position].skills.size() > 0) {
+            topSkills = users[position].skills.get(0).name + " "
+                    + users[position].skills.get(0).rating;
         }
-        if (users[position].skills.length > 1) {
-            topSkills += " • " + users[position].skills[1].name + " " + users[position].skills[1].rating;
+        if (users[position].skills.size() > 1) {
+            topSkills += " • " + users[position].skills.get(1).name + " "
+                    + users[position].skills.get(1).rating;
         }
         text2.setText(topSkills);
 

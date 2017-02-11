@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements OnUsersFetched {
                         MainActivity.this.startActivity(openProfile);
                     }
                 });
-                Log.d("main", "get me in there");
             }
         });
     }

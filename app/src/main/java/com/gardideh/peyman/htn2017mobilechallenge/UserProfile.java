@@ -7,7 +7,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by Peyman on 2017-02-09.
@@ -21,7 +24,7 @@ public class UserProfile implements Comparable<UserProfile>, Serializable {
     String phone;
     double latitude;
     double longitude;
-    UserSkill[] skills;
+    ArrayList<UserSkill> skills;
 
     public UserProfile(JSONObject userJSON) {
         try {
@@ -74,12 +77,19 @@ public class UserProfile implements Comparable<UserProfile>, Serializable {
         }
 
         try {
+
             JSONArray skillsObject = userJSON.getJSONArray("skills");
-            skills = new UserSkill[skillsObject.length()];
+            skills = new ArrayList<>();
             for (int i = 0; i < skillsObject.length(); i++) {
-                skills[i] = new UserSkill(skillsObject.getJSONObject(i));
+                UserSkill newSkill = new UserSkill(skillsObject.getJSONObject(i));
+                int index = skills.indexOf(newSkill);
+                if (index == -1 ) {
+                    skills.add(newSkill);
+                } else {
+                    skills.get(index).rating = Math.max(skills.get(index).rating, newSkill.rating);
+                }
             }
-            Arrays.sort(skills);
+            Collections.sort(skills);
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d("parsing user", "skills not found");

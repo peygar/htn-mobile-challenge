@@ -30,4 +30,9 @@ public class UserSkill implements Comparable<UserSkill>, Serializable {
             return 1;
         }
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return name.compareTo(((UserSkill) obj).name) == 0;
+    }
 }
